@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Front-end task</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #image-concat-form label {
+            display: block;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image concatenation app</h1>
+    <form action="" id="image-concat-form">
+        <label class="input-field">
+            File attachment:
+            <input type="file" accept="image/*">
+        </label>
+
+        <label class="input-field">
+            File attachment:
+            <input type="file" accept="image/*">
+        </label>
+
+        <label class="input-field" id="file-select-error">
+            Choose a file
+        </label>
+
+        Change the number of inputs
+
+        <button type="button" id="add-input">
+            Add
+        </button>
+
+        <button type="button" id="remove-input">
+            Remove
+        </button>
+
+        <label class="check-field">
+            Horizontal rendering mode
+            <input type="radio" name="renderModeChoise" value="horizontal" checked/>
+        </label>
+
+        <label class="check-field">
+            Vertical rendering mode
+            <input type="radio" name="renderModeChoise" value="vertical"/>
+        </label>
+    </form>
+
+    <canvas id="imgList"></canvas>
+
+    <script src="index.js" type="text/javascript"></script>
+</body>
+</html>

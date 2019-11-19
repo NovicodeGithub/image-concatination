@@ -1,0 +1,20 @@
+{
+	"name": "task-readdle",
+	"private": true,
+	"description": "",
+	"author": "Daniil novikov",
+	"version": "1.0.0",
+	"license": "MIT",
+	"dependencies": {},
+	"devDependencies": {
+		"neutrino": "~8.3.0",
+		"@atomspace/stylelint": "~1.1.1",
+		"browser-sync": "2.24.7",
+		"htmlhint": "0.10.1"
+	},
+	"scripts": {
+		"start": "browser-sync start --server \"src\" --files \"src\" --open \"external\" --no-notify --no-ghost-mode",
+		"test": "htmlhint src/**/*.html",
+		"pretest": "neutrino stylelint --fix"
+	}
+}
