@@ -7,7 +7,7 @@ let inputImageList = document.querySelectorAll("input[type=file]");
 imageList = Array.prototype.slice.call(inputImageList);
 
 let switchRadioList = document.querySelectorAll("input[type=radio]");
-switchRadioList = Array.prototype.slice.call(switchRadioList);z
+switchRadioList = Array.prototype.slice.call(switchRadioList);
 
 let form = document.getElementById("image-concat-form");
 
@@ -19,16 +19,13 @@ ctx.canvas.width = window.innerWidth;
 let imageListInfo = [];
 
 
-
-let listenImageList = function imageListAddListener() {
+(function () {
     imageList.forEach(function(img) {
         img.addEventListener('change', () => {
             img.addEventListener('load', pushImg(imageList), false);
         });
     });
-}
-
-listenImageList();
+}());
 
 
 switchRadioList.some(function(renderModeChoise) {
@@ -36,7 +33,6 @@ switchRadioList.some(function(renderModeChoise) {
         renderModeSwitch(renderModeChoise);
     });
 });
-
 
 
 function pushImg(imageList) {
@@ -77,6 +73,8 @@ function renderModeSwitch(renderModeChoise) {
         default:
             alert('Произошла ошибка при смене режима отрисовки');
     }
+    
+    renderImageScaled(renderMode, imageListInfo);
 }
 
 function collectImage(img) {
